@@ -1,0 +1,30 @@
+// general footer config
+#mainfooter {
+    background-color:$secondaryColor;
+    border-top: solid 3px darken($secondaryColor, 20);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    a {
+        color: $textColor;
+        text-decoration: none;
+        position: relative;
+        
+        &:hover{
+    
+            &::after{
+                width: 100%;
+            }
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0%;
+            width: 0%;
+            border-bottom: 2px solid #557efc;
+            transition: 0.4s;
+        }
+    }
+
+}

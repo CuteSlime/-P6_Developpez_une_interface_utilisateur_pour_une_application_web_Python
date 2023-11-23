@@ -1,6 +1,12 @@
 @import "./Libs/Reset.scss";
 @import "./Libs/Variable.scss";
-
+@import "./Header.scss";
+@import "./Main.scss";
+@import "./Footer.scss";
 body {
-    font-size: 12rem
+    background-color:$primaryColor;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height:100vh;
+    font-family: sans-serif;
 }

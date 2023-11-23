@@ -1,0 +1,22 @@
+
+//config of the main page grid
+#main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    grid-auto-flow: row;
+    justify-items: center;
+    gap: rem(50);
+    margin: 5%;
+
+    
+    *{
+        text-align: center;
+    }
+    article{
+        overflow: hidden;
+    }
+    a{
+        text-decoration: none;
+        
+    }
+}

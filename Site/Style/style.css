@@ -45,6 +45,106 @@ td, th {
   padding: 0;
 }
 
+.logo {
+  grid-area: logo;
+}
+
+.mainMenu {
+  grid-area: mainMenu;
+}
+
+.logo, .mainMenu, .social {
+  padding: 5px;
+}
+
+#mainheader {
+  display: grid;
+  grid-template-areas: "logo mainMenu mainMenu mainMenu mainMenu mainMenu" "logo mainMenu mainMenu mainMenu mainMenu mainMenu";
+  gap: 10px;
+  background-color: rgb(98, 117, 127);
+  border-bottom: solid 3px #364045;
+  padding: 5px;
+}
+#mainheader h1 {
+  text-align: center;
+  padding-top: 5px;
+  color: rgb(212, 212, 212);
+}
+
+.mainMenu ul {
+  display: grid;
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  grid-template: 1fr/1fr 1fr 1fr 1fr;
+}
+.mainMenu ul a {
+  color: rgb(212, 212, 212);
+  text-decoration: none;
+  position: relative;
+}
+.mainMenu ul a:hover::after {
+  width: 100%;
+}
+.mainMenu ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0%;
+  width: 0%;
+  border-bottom: 2px solid #565656;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+  grid-auto-flow: row;
+  justify-items: center;
+  gap: rem(50);
+  margin: 5%;
+}
+#main * {
+  text-align: center;
+}
+#main article {
+  overflow: hidden;
+}
+#main a {
+  text-decoration: none;
+}
+
+#mainfooter {
+  background-color: rgb(98, 117, 127);
+  border-top: solid 3px #364045;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
+#mainfooter a {
+  color: rgb(212, 212, 212);
+  text-decoration: none;
+  position: relative;
+}
+#mainfooter a:hover::after {
+  width: 100%;
+}
+#mainfooter a::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0%;
+  width: 0%;
+  border-bottom: 2px solid #557efc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
 body {
-  font-size: 12rem;
+  background-color: rgb(61, 61, 61);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: sans-serif;
 }
