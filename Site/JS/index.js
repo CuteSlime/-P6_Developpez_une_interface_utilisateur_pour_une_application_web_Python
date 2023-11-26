@@ -28,3 +28,20 @@ async function logMovies() {
 
     document.getElementById('best_rate')
   };
+
+  function selectgenre(list){
+    console.log("1", list)
+    selectedGenre = []
+    indexList = []
+    while (selectedGenre.length < 3){
+        index = Math.floor(Math.random() * list.length);
+        console.log("2", index)
+        if (indexList.includes(index) === false){
+            selectedGenre.push(list[index])
+            console.log("3", selectedGenre)
+        }
+        indexList.push(index)
+    }
+    console.log("4",selectedGenre)
+    return selectedGenre
+}
