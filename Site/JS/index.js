@@ -1,3 +1,12 @@
+start()
+async function start(){
+    await logMovies()
+    genres = await getgenres()
+    genres = await selectgenre(genres)
+    console.log(genres)
+
+
+}
 async function getgenres() {
     let response = await fetch("http://localhost:8000/api/v1/genres");
     let genres = await response.json();
@@ -45,3 +54,5 @@ async function logMovies() {
     console.log("4",selectedGenre)
     return selectedGenre
 }
+  
+//   'http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score'
