@@ -1,3 +1,4 @@
+const API_URL = "http://localhost:8000/api/v1/"
 start()
 async function start(){
     genres = await getGenres()
@@ -7,10 +8,10 @@ async function start(){
 
 }
 async function getGenres() {
-    let response = await fetch("http://localhost:8000/api/v1/genres");
+    let response = await fetch(API_URL + "genres");
     let genres = await response.json();
     genres = genres.results;
-    nextPage = "http://localhost:8000/api/v1/genres/?page=2"
+    nextPage = API_URL + "genres/?page=2"
     while (nextPage){
         let response = await fetch(nextPage)
         let nextGenres = await response.json();
@@ -22,7 +23,9 @@ async function getGenres() {
     return genres
     };
 async function getBestMovies(genre = "") {
+    let responseP1 = await fetch(API_URL + "titles/?sort_by=-imdb_score"+genre);
     let movies = await responseP1.json();
+        let responseP2 = await fetch(API_URL + "titles/?page=2&sort_by=-imdb_score"+genre);
     movies = movies.results;
 
     let nextMovies = await responseP2.json();
