@@ -3,7 +3,10 @@ start()
 async function start(){
     genres = await getGenres()
     genres = await selectGenre(genres)
-    console.log(genres)
+    best_rated_movies = await getBestMovies()
+    best_movies_cat_1 = await getBestMovies(genres[0])
+    best_movies_cat_2 = await getBestMovies(genres[1])
+    best_movies_cat_3 = await getBestMovies(genres[2])
 
 
 }
