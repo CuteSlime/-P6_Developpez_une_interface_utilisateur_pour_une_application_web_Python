@@ -1,13 +1,12 @@
 start()
 async function start(){
-    await logMovies()
-    genres = await getgenres()
-    genres = await selectgenre(genres)
+    genres = await getGenres()
+    genres = await selectGenre(genres)
     console.log(genres)
 
 
 }
-async function getgenres() {
+async function getGenres() {
     let response = await fetch("http://localhost:8000/api/v1/genres");
     let genres = await response.json();
     genres = genres.results;
@@ -22,9 +21,7 @@ async function getgenres() {
     genres = genres.map(genre => genre.name);
     return genres
     };
-async function logMovies() {
-    let responseP1 = await fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score");
-    let responseP2 = await fetch("http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score");
+async function getBestMovies(genre = "") {
     let movies = await responseP1.json();
     movies = movies.results;
 
@@ -38,7 +35,7 @@ async function logMovies() {
     document.getElementById('best_rate')
   };
 
-  function selectgenre(list){
+  function selectGenre(list){
     console.log("1", list)
     selectedGenre = []
     indexList = []
