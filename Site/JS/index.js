@@ -23,19 +23,23 @@ async function getGenres() {
     return genres
     };
 async function getBestMovies(genre = "") {
+    if (genre != ""){
+        genre = "&genre=" + genre
+    }
     let responseP1 = await fetch(API_URL + "titles/?sort_by=-imdb_score"+genre);
     let movies = await responseP1.json();
+    let nextMovies
+    if (movies.next){
         let responseP2 = await fetch(API_URL + "titles/?page=2&sort_by=-imdb_score"+genre);
+        nextMovies = await responseP2.json();
+        nextMovies = nextMovies.results;
+    }
     movies = movies.results;
-
-    let nextMovies = await responseP2.json();
-    nextMovies = nextMovies.results;
-
-    movies = [...movies, ...nextMovies];
-
+    if (nextMovies){
+        movies = [...movies, ...nextMovies];
+    }
     let bestMovies = movies.slice(0, 7);
-
-    document.getElementById('best_rate')
+    return bestMovies
   };
 
   function selectGenre(list){
