@@ -58,5 +58,64 @@ async function getBestMovies(genre = "") {
     console.log("4",selectedGenre)
     return selectedGenre
 }
-  
+function fillCategorie(movies_list, categorie="best rate", genre=""){
+
+
+    if (categorie == "best rate"){
+        document.getElementById("best_rate").innerHTML = "<header>" +
+            + "<h1>Les mieux noté</h1>"
+            + "</header>"
+
+        movies_list.forEach(movies => {
+            
+        });
+    }
+
+    if (categorie == "cat1"){
+        document.getElementById("best_rate").innerHTML = "<header>" +
+            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
+            + "</header>"
+            
+        movies_list.forEach(movies => {
+            
+        });
+    }
+
+    if (categorie == "cat2"){
+        document.getElementById("best_rate").innerHTML = "<header>" +
+            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
+            + "</header>"
+            
+        movies_list.forEach(movies => {
+            document.getElementById("best_rate").innerHTML += '<a class="movielink" href="'+ +'">'
+                + '<article class="movie">'
+                + '<!-- icon on the top left -->'
+                + '<header class="subheader">'
+                + '<svg viewbox="0 0 50 30" class="icon">'
+                + '<use xlink:href="./src/icon/Top_7.svg#icon"/>'
+                + '</svg>'
+                + '</header>'
+                + '<article>'                
+                + '<!-- Main picture of the movie -->'
+                + '<img src="" alt="">'
+                + '</article>'
+                + '<!-- title of the movie -->'
+                + '<footer class="subfooter">'
+                + '<h1 class ="movie_name"></h1>'
+                + '</footer>'
+                + '</article>'
+                + '</a>'
+        });
+    }
+
+    if (categorie == "cat3"){
+        document.getElementById("best_rate").innerHTML = "<header>" +
+            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
+            + "</header>"
+            
+        movies_list.forEach(movies => {
+            
+        });
+    }
+}
 //   'http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score'
