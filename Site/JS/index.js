@@ -7,7 +7,10 @@ async function start(){
     best_movies_cat_1 = await getBestMovies(genres[0])
     best_movies_cat_2 = await getBestMovies(genres[1])
     best_movies_cat_3 = await getBestMovies(genres[2])
-
+    await fillCategorie(best_rated_movies)
+    await fillCategorie(best_movies_cat_1, categorie="cat1", genre=genres[0])
+    await fillCategorie(best_movies_cat_2, categorie="cat2", genre=genres[1])
+    await fillCategorie(best_movies_cat_3, categorie="cat3", genre=genres[2])
 
 }
 async function getGenres() {
