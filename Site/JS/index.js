@@ -62,32 +62,12 @@ function fillCategorie(movies_list, categorie="best rate", genre=""){
 
 
     if (categorie == "best rate"){
-        document.getElementById("best_rate").innerHTML = "<header>" +
+        document.getElementById("best_rate").innerHTML = "<header class='title'>" 
             + "<h1>Les mieux noté</h1>"
             + "</header>"
 
-        movies_list.forEach(movies => {
-            
-        });
-    }
-
-    if (categorie == "cat1"){
-        document.getElementById("best_rate").innerHTML = "<header>" +
-            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
-            + "</header>"
-            
-        movies_list.forEach(movies => {
-            
-        });
-    }
-
-    if (categorie == "cat2"){
-        document.getElementById("best_rate").innerHTML = "<header>" +
-            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
-            + "</header>"
-            
-        movies_list.forEach(movies => {
-            document.getElementById("best_rate").innerHTML += '<a class="movielink" href="'+ +'">'
+        movies_list.forEach(movie => {
+            document.getElementById("best_rate").innerHTML += '<a class="movielink" href="'+'#' +'">'
                 + '<article class="movie">'
                 + '<!-- icon on the top left -->'
                 + '<header class="subheader">'
@@ -97,11 +77,65 @@ function fillCategorie(movies_list, categorie="best rate", genre=""){
                 + '</header>'
                 + '<article>'                
                 + '<!-- Main picture of the movie -->'
-                + '<img src="" alt="">'
+                + '<img src="'+ movie.image_url +'" alt="">'
                 + '</article>'
                 + '<!-- title of the movie -->'
                 + '<footer class="subfooter">'
-                + '<h1 class ="movie_name"></h1>'
+                + '<h1 class ="">'+movie.title+ '</h1>'
+                + '</footer>'
+                + '</article>'
+                + '</a>'
+        });
+    }
+
+    if (categorie == "cat1"){
+        document.getElementById("categorie1").innerHTML = "<header class='title'>" 
+            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
+            + "</header>"
+            
+        movies_list.forEach(movie => {
+            document.getElementById("categorie1").innerHTML += '<a class="movielink" href="'+'#' +'">'
+                + '<article class="movie">'
+                + '<!-- icon on the top left -->'
+                + '<header class="subheader">'
+                + '<svg viewbox="0 0 50 30" class="icon">'
+                + '<use xlink:href="./src/icon/Top_7.svg#icon"/>'
+                + '</svg>'
+                + '</header>'
+                + '<article>'                
+                + '<!-- Main picture of the movie -->'
+                + '<img src="'+ movie.image_url +'" alt="">'
+                + '</article>'
+                + '<!-- title of the movie -->'
+                + '<footer class="subfooter">'
+                + '<h1 class ="">'+movie.title+ '</h1>'
+                + '</footer>'
+                + '</article>'
+                + '</a>'
+        });
+    }
+
+    if (categorie == "cat2"){
+        document.getElementById("categorie2").innerHTML = "<header class='title'>" 
+            + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
+            + "</header>"
+            
+        movies_list.forEach(movie => {
+            document.getElementById("categorie2").innerHTML += '<a class="movielink" href="'+'#' +'">'
+                + '<article class="movie">'
+                + '<!-- icon on the top left -->'
+                + '<header class="subheader">'
+                + '<svg viewbox="0 0 50 30" class="icon">'
+                + '<use xlink:href="./src/icon/Top_7.svg#icon"/>'
+                + '</svg>'
+                + '</header>'
+                + '<article>'                
+                + '<!-- Main picture of the movie -->'
+                + '<img src="'+ movie.image_url +'" alt="">'
+                + '</article>'
+                + '<!-- title of the movie -->'
+                + '<footer class="subfooter">'
+                + '<h1 class ="">'+movie.title+ '</h1>'
                 + '</footer>'
                 + '</article>'
                 + '</a>'
@@ -109,12 +143,29 @@ function fillCategorie(movies_list, categorie="best rate", genre=""){
     }
 
     if (categorie == "cat3"){
-        document.getElementById("best_rate").innerHTML = "<header>" +
+        document.getElementById("categorie3").innerHTML = "<header class='title'>" 
             + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
             + "</header>"
             
-        movies_list.forEach(movies => {
-            
+        movies_list.forEach(movie => {
+            document.getElementById("categorie3").innerHTML += '<a class="movielink" href="'+'#' +'">'
+                + '<article class="movie">'
+                + '<!-- icon on the top left -->'
+                + '<header class="subheader">'
+                + '<svg viewbox="0 0 50 30" class="icon">'
+                + '<use xlink:href="./src/icon/Top_7.svg#icon"/>'
+                + '</svg>'
+                + '</header>'
+                + '<article>'                
+                + '<!-- Main picture of the movie -->'
+                + '<img src="'+ movie.image_url +'" alt="">'
+                + '</article>'
+                + '<!-- title of the movie -->'
+                + '<footer class="subfooter">'
+                + '<h1 class ="">'+movie.title+ '</h1>'
+                + '</footer>'
+                + '</article>'
+                + '</a>'
         });
     }
 }
