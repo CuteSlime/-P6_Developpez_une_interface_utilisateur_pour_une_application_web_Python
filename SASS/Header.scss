@@ -2,7 +2,7 @@
 // making grid for my main menu
 .logo { grid-area: logo;}
 .mainMenu { grid-area: mainMenu;}
-.logo, .mainMenu, .social {padding: 5px;}
+.logo, .mainMenu {padding: 5px;}
 
 #mainheader {
     display: grid;
