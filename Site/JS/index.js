@@ -11,6 +11,10 @@ async function start(){
     await fillCategorie(best_movies_cat_1, categorie="categorie1", genre=genres[0])
     await fillCategorie(best_movies_cat_2, categorie="categorie2", genre=genres[1])
     await fillCategorie(best_movies_cat_3, categorie="categorie3", genre=genres[2])
+    makeCarousel()
+    makeCarousel("categorie1")
+    makeCarousel("categorie2")
+    await makeCarousel("categorie3")
 }
 async function getGenres() {
     let response = await fetch(API_URL + "genres");
@@ -76,6 +80,50 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
             + '<article>'+'<p>' + bestMovie.description + '</p>'+ '</article></div>' 
             document.getElementById("main_movie").style.backgroundImage = 'url(' + movies_list[0].image_url + ')'
         
+            document.getElementById("playButton").addEventListener("click", (event) => {
+              event.preventDefault(); // Prevent the default button behavior
+              let modal = document.getElementById('myModal');
+              modal.style.display = "block";
+              modal.innerHTML =
+                  '<div class="modal-content" style="background-image: url(' + bestMovie.image_url + ');">' +
+                  '<div class="movie_detail">' +
+                  '<span class="close">&times;</span>' +
+                  '<p class="title_modal">' + bestMovie.title + '</p>' +
+                  '<div class="duration"><h1> Durée :</h1>' +
+                  '<p>' + bestMovie.duration + '</p></div>' +
+                  '<div class="genre"><h1> Genre :</h1>' +
+                  '<p>' + bestMovie.genres + '</p></div>' +
+                  '<div class="imdb_score"><h1> Score IMDB :</h1>' +
+                  '<p>' + bestMovie.imdb_score + '</p></div>' +
+                  '<div class="date_published"><h1> Date de sortie :</h1>' +
+                  '<p>' + bestMovie.date_published + '</p></div>' +
+                  '<div class="rated"><h1> Classé :</h1>' +
+                  '<p>' + bestMovie.rated + '</p></div>' +
+                  '<div class="countries"><h1> Pays d\'origine :</h1>' +
+                  '<p>' + bestMovie.countries + '</p></div>' +
+                  '<div class="directors"><h1> Réalisateur :</h1>' +
+                  '<p>' + bestMovie.directors + '</p></div>' +
+                  '<div class="actors"><h1> Acteurs :</h1>' +
+                  '<p>' + bestMovie.actors + '</p></div>' +
+                  '<div class="worldwide_gross_income"><h1> Revenu au box office :</h1>' +
+                  '<p>' + bestMovie.worldwide_gross_income + '</p></div>' +
+                  '<div class="description"><h1> Résumé :</h1>' +
+                  '<p>' + bestMovie.description + '</p></div>' +
+                  '</div>' +
+                  '</div>';
+          
+              span = document.getElementsByClassName("close")[0];
+              span.addEventListener("click", (event) => {
+                  modal.style.display = "none";
+                  modal.innerHTML = "";
+              });
+              window.addEventListener("click", (event) => {
+                  if (event.target == modal) {
+                      modal.style.display = "none";
+                  }
+              });
+          });
+
 
           }
 
@@ -161,4 +209,35 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
             
             document.getElementById('content_'+categorie).appendChild(movielink);
     });
+}
+function makeCarousel(categorie="best_rate"){
+    let gap = 16;
+
+let carousel = document.getElementById(categorie),
+  content = document.getElementById("content_" + categorie),
+  next = document.getElementById(categorie + "_next"),
+  prev = document.getElementById(categorie + "_prev");
+
+next.addEventListener("click", e => {
+  carousel.scrollBy(width + gap, 0);
+  if (carousel.scrollWidth !== 0) {
+    prev.style.display = "flex";
+  }
+  if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+    next.style.display = "none";
+  }
+});
+prev.addEventListener("click", e => {
+  carousel.scrollBy(-(width + gap), 0);
+  if (carousel.scrollLeft - width - gap <= 0) {
+    prev.style.display = "none";
+  }
+  if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+    next.style.display = "flex";
+  }
+});
+
+let width = carousel.offsetWidth;
+window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
 }
