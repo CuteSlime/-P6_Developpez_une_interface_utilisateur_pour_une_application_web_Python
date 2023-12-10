@@ -112,9 +112,6 @@ td, th {
   gap: 50px;
   margin: 5%;
 }
-#main * {
-  text-align: center;
-}
 
 a {
   text-decoration: none;
@@ -149,8 +146,8 @@ a {
 }
 
 .wrapper {
-  width: 100%;
-  max-width: 1200px;
+  margin: 0 20px;
+  max-width: 100%;
   position: relative;
 }
 
@@ -168,17 +165,21 @@ section {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  margin-top: 100px;
-  margin-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 10px;
 }
 section > .content {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 6px;
   grid-auto-flow: column;
-  margin: auto;
+  margin-top: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 600px;
 }
 
 .prev,
@@ -283,9 +284,10 @@ section > .content {
   height: fit-content;
   padding: 10px 0;
   border-radius: 5px;
-  width: 200px;
+  width: 210px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  margin: 0 10px;
   background-color: rgba(0, 0, 0, 0.4);
 }
 .movie article {
@@ -414,7 +416,9 @@ section > .content {
   margin: 15% auto; /* 15% from the top and centered */
   border: 1px solid #888;
   width: 80%;
-  height: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 /* The Close Button */
@@ -457,6 +461,41 @@ section > .content {
   margin-bottom: 10px;
 }
 
+@media (max-width: 630px) {
+  /* Modal Content/Box */
+  .modal-content {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .movie_detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "close close" "title_modal title_modal" "duration genre" "imdb_score date_published" "rated countries" "directors worldwide_gross_income" " actors actors" "description description";
+    gap: 30px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .movie_detail > .title_modal {
+    justify-self: center;
+    font-size: x-large;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .movie_detail > div h1 {
+    color: rgb(212, 212, 212);
+    font-weight: bold;
+    font-size: large;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
 body {
   background-color: rgb(227, 227, 227);
   display: grid;
