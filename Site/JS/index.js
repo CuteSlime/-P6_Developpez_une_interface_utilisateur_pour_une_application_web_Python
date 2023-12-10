@@ -80,9 +80,10 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
             + '<div class="content" id="content_'+categorie+'">'
             +'</div>'
 
-            document.getElementById("main_movie").innerHTML =  '<div><h1 class ="title">'+bestMovie.title+ '</h1>'
-            + '<button class="play" id="playButton">Lire</button>'
-            + '<div>'+'<p>' + bestMovie.description + '</p>'+ '</div></div>' 
+            document.getElementById("main_movie").innerHTML =  '<div><h1 class ="title">'+bestMovie.title+ '</h1>' 
+            + '<div class="play_block">'
+            +'<button class="play" id="playButton">Lire</button><p>' 
+            + bestMovie.description + '</p>'+ '</div></div>' 
             document.getElementById("main_movie").style.backgroundImage = 'url(' + movies_list[0].image_url + ')'
         
             document.getElementById("playButton").addEventListener("click", (event) => {
