@@ -94,25 +94,25 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
                   '<div class="movie_detail">' +
                   '<span class="close">&times;</span>' +
                   '<p class="title_modal">' + bestMovie.title + '</p>' +
-                  '<div class="duration"><h1> Durée :</h1>' +
+                  '<div class="duration"><h1> Durée&nbsp;:</h1>' +
                   '<p>' + bestMovie.duration + '</p></div>' +
-                  '<div class="genre"><h1> Genre :</h1>' +
+                  '<div class="genre"><h1> Genre&nbsp;:</h1>' +
                   '<p>' + bestMovie.genres + '</p></div>' +
-                  '<div class="imdb_score"><h1> Score IMDB :</h1>' +
+                  '<div class="imdb_score"><h1> Score IMDB&nbsp;:</h1>' +
                   '<p>' + bestMovie.imdb_score + '</p></div>' +
-                  '<div class="date_published"><h1> Date de sortie :</h1>' +
+                  '<div class="date_published"><h1> Date de sortie&nbsp;:</h1>' +
                   '<p>' + bestMovie.date_published + '</p></div>' +
-                  '<div class="rated"><h1> Classé :</h1>' +
+                  '<div class="rated"><h1> Classé&nbsp;:</h1>' +
                   '<p>' + bestMovie.rated + '</p></div>' +
-                  '<div class="countries"><h1> Pays d\'origine :</h1>' +
+                  '<div class="countries"><h1> Pays d\'origine&nbsp;:</h1>' +
                   '<p>' + bestMovie.countries + '</p></div>' +
-                  '<div class="directors"><h1> Réalisateur :</h1>' +
+                  '<div class="directors"><h1> Réalisateur&nbsp;:</h1>' +
                   '<p>' + bestMovie.directors + '</p></div>' +
-                  '<div class="actors"><h1> Acteurs :</h1>' +
+                  '<div class="actors"><h1> Acteurs&nbsp;:</h1>' +
                   '<p>' + bestMovie.actors + '</p></div>' +
-                  '<div class="worldwide_gross_income"><h1> Revenu au box office :</h1>' +
+                  '<div class="worldwide_gross_income"><h1> Revenu au box office&nbsp;:</h1>' +
                   '<p>' + bestMovie.worldwide_gross_income + '</p></div>' +
-                  '<div class="description"><h1> Résumé :</h1>' +
+                  '<div class="description"><h1> Résumé&nbsp;:</h1>' +
                   '<p>' + bestMovie.description + '</p></div>' +
                   '</div>' +
                   '</div>';
@@ -136,7 +136,7 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
 
         else{
             document.getElementById(categorie).innerHTML = "<header class='title'>"
-                + "<h1> Meilleur film de la catégorie : " + genre + "</h1>"
+                + "<h1> Meilleur film de la catégorie&nbsp;: " + genre + "</h1>"
                 + "</header>"
                 + '<div class="content" id="content_'+categorie+'">'
                 +'</div>'
@@ -157,25 +157,25 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
                 +   '<div class="movie_detail">'
                 +    '<span class="close">&times;</span>'
                 +    '<p class="title_modal">'+moviedata.title +'</p>'
-                +    '<div class="duration"><h1> Durée :</h1>'
+                +    '<div class="duration"><h1> Durée&nbsp;:</h1>'
                 +    '<p>'+moviedata.duration +'</p></div>'
-                +    '<div class="genre"><h1> Genre :</h1>'
+                +    '<div class="genre"><h1> Genre&nbsp;:</h1>'
                 +    '<p>'+moviedata.genres +'</p></div>'
-                +    '<div class="imdb_score"><h1> Score IMDB :</h1>'
+                +    '<div class="imdb_score"><h1> Score IMDB&nbsp;:</h1>'
                 +    '<p>'+moviedata.imdb_score +'</p></div>'
-                +    '<div class="date_published"><h1> Date de sortie :</h1>'
+                +    '<div class="date_published"><h1> Date de sortie&nbsp;:</h1>'
                 +    '<p>'+moviedata.date_published +'</p></div>'
-                +    '<div class="rated"><h1> Classé :</h1>'
+                +    '<div class="rated"><h1> Classé&nbsp;:</h1>'
                 +    '<p>'+moviedata.rated +'</p></div>'
-                +    '<div class="countries"><h1> Pays d\'origine :</h1>'
+                +    '<div class="countries"><h1> Pays d\'origine&nbsp;:</h1>'
                 +    '<p>'+moviedata.countries +'</p></div>'
-                +    '<div class="directors"><h1> Réalisateur :</h1>'
+                +    '<div class="directors"><h1> Réalisateur&nbsp;:</h1>'
                 +    '<p>'+moviedata.directors +'</p></div>'
-                +    '<div class="actors"><h1> Acteurs :</h1>'
+                +    '<div class="actors"><h1> Acteurs&nbsp;:</h1>'
                 +    '<p>'+moviedata.actors +'</p></div>'
-                +    '<div class="worldwide_gross_income"><h1> Revenu au box office :</h1>'
+                +    '<div class="worldwide_gross_income"><h1> Revenu au box office&nbsp;:</h1>'
                 +    '<p>'+moviedata.worldwide_gross_income +'</p></div>'
-                +    '<div class="description"><h1> Résumé :</h1>'
+                +    '<div class="description"><h1> Résumé&nbsp;:</h1>'
                 +    '<p>'+moviedata.description +'</p></div>'
                 +   '</div>'
                 +  '</div>';
@@ -223,6 +223,7 @@ let carousel = document.getElementById(categorie),
   next = document.getElementById(categorie + "_next"),
   prev = document.getElementById(categorie + "_prev");
 
+  
 next.addEventListener("click", e => {
   carousel.scrollBy(width + gap, 0);
   if (carousel.scrollWidth !== 0) {
