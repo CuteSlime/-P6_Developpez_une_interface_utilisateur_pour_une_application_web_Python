@@ -59,6 +59,7 @@ section{
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    -ms-overflow-style: none;
     margin-top: 50px;
     margin-bottom: 50px;
     // margin-left: 20px;
@@ -75,6 +76,9 @@ section{
         
     }
 
+}
+section::-webkit-scrollbar{
+    display: none;
 }
 
 .prev,

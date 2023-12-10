@@ -165,6 +165,7 @@ section {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  -ms-overflow-style: none;
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 10px;
@@ -180,6 +181,10 @@ section > .content {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 600px;
+}
+
+section::-webkit-scrollbar {
+  display: none;
 }
 
 .prev,
