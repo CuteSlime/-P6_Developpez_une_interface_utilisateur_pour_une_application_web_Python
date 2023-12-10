@@ -81,8 +81,8 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
             +'</div>'
 
             document.getElementById("main_movie").innerHTML =  '<div><h1 class ="title">'+bestMovie.title+ '</h1>'
-            + '<button class="play" id="playButton"><p>Lire</p></button>'
-            + '<article>'+'<p>' + bestMovie.description + '</p>'+ '</article></div>' 
+            + '<button class="play" id="playButton">Lire</button>'
+            + '<div>'+'<p>' + bestMovie.description + '</p>'+ '</div></div>' 
             document.getElementById("main_movie").style.backgroundImage = 'url(' + movies_list[0].image_url + ')'
         
             document.getElementById("playButton").addEventListener("click", (event) => {
@@ -93,26 +93,26 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
                   '<div class="modal-content" style="background-image: url(' + bestMovie.image_url + ');">' +
                   '<div class="movie_detail">' +
                   '<span class="close">&times;</span>' +
-                  '<p class="title_modal">' + bestMovie.title + '</p>' +
-                  '<div class="duration"><h1> Durée&nbsp;:</h1>' +
+                  '<h1 class="title_modal">' + bestMovie.title + '</h1>' +
+                  '<div class="duration"><h2> Durée&nbsp;:</h2>' +
                   '<p>' + bestMovie.duration + '</p></div>' +
-                  '<div class="genre"><h1> Genre&nbsp;:</h1>' +
+                  '<div class="genre"><h2> Genre&nbsp;:</h2>' +
                   '<p>' + bestMovie.genres + '</p></div>' +
-                  '<div class="imdb_score"><h1> Score IMDB&nbsp;:</h1>' +
+                  '<div class="imdb_score"><h2> Score IMDB&nbsp;:</h2>' +
                   '<p>' + bestMovie.imdb_score + '</p></div>' +
-                  '<div class="date_published"><h1> Date de sortie&nbsp;:</h1>' +
+                  '<div class="date_published"><h2> Date de sortie&nbsp;:</h2>' +
                   '<p>' + bestMovie.date_published + '</p></div>' +
-                  '<div class="rated"><h1> Classé&nbsp;:</h1>' +
+                  '<div class="rated"><h2> Classé&nbsp;:</h2>' +
                   '<p>' + bestMovie.rated + '</p></div>' +
-                  '<div class="countries"><h1> Pays d\'origine&nbsp;:</h1>' +
+                  '<div class="countries"><h2> Pays d\'origine&nbsp;:</h2>' +
                   '<p>' + bestMovie.countries + '</p></div>' +
-                  '<div class="directors"><h1> Réalisateur&nbsp;:</h1>' +
+                  '<div class="directors"><h2> Réalisateur&nbsp;:</h2>' +
                   '<p>' + bestMovie.directors + '</p></div>' +
-                  '<div class="actors"><h1> Acteurs&nbsp;:</h1>' +
+                  '<div class="actors"><h2> Acteurs&nbsp;:</h2>' +
                   '<p>' + bestMovie.actors + '</p></div>' +
-                  '<div class="worldwide_gross_income"><h1> Revenu au box office&nbsp;:</h1>' +
+                  '<div class="worldwide_gross_income"><h2> Revenu au box office&nbsp;:</h2>' +
                   '<p>' + bestMovie.worldwide_gross_income + '</p></div>' +
-                  '<div class="description"><h1> Résumé&nbsp;:</h1>' +
+                  '<div class="description"><h2> Résumé&nbsp;:</h2>' +
                   '<p>' + bestMovie.description + '</p></div>' +
                   '</div>' +
                   '</div>';
@@ -156,26 +156,26 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
                 '<div class="modal-content" style="background-image: url('+ moviedata.image_url+');">'
                 +   '<div class="movie_detail">'
                 +    '<span class="close">&times;</span>'
-                +    '<p class="title_modal">'+moviedata.title +'</p>'
-                +    '<div class="duration"><h1> Durée&nbsp;:</h1>'
+                +    '<h1 class="title_modal">'+moviedata.title +'</h1>'
+                +    '<div class="duration"><h2> Durée&nbsp;:</h2>'
                 +    '<p>'+moviedata.duration +'</p></div>'
-                +    '<div class="genre"><h1> Genre&nbsp;:</h1>'
+                +    '<div class="genre"><h2> Genre&nbsp;:</h2>'
                 +    '<p>'+moviedata.genres +'</p></div>'
-                +    '<div class="imdb_score"><h1> Score IMDB&nbsp;:</h1>'
+                +    '<div class="imdb_score"><h2> Score IMDB&nbsp;:</h2>'
                 +    '<p>'+moviedata.imdb_score +'</p></div>'
-                +    '<div class="date_published"><h1> Date de sortie&nbsp;:</h1>'
+                +    '<div class="date_published"><h2> Date de sortie&nbsp;:</h2>'
                 +    '<p>'+moviedata.date_published +'</p></div>'
-                +    '<div class="rated"><h1> Classé&nbsp;:</h1>'
+                +    '<div class="rated"><h2> Classé&nbsp;:</h2>'
                 +    '<p>'+moviedata.rated +'</p></div>'
-                +    '<div class="countries"><h1> Pays d\'origine&nbsp;:</h1>'
+                +    '<div class="countries"><h2> Pays d\'origine&nbsp;:</h2>'
                 +    '<p>'+moviedata.countries +'</p></div>'
-                +    '<div class="directors"><h1> Réalisateur&nbsp;:</h1>'
+                +    '<div class="directors"><h2> Réalisateur&nbsp;:</h2>'
                 +    '<p>'+moviedata.directors +'</p></div>'
-                +    '<div class="actors"><h1> Acteurs&nbsp;:</h1>'
+                +    '<div class="actors"><h2> Acteurs&nbsp;:</h2>'
                 +    '<p>'+moviedata.actors +'</p></div>'
-                +    '<div class="worldwide_gross_income"><h1> Revenu au box office&nbsp;:</h1>'
+                +    '<div class="worldwide_gross_income"><h2> Revenu au box office&nbsp;:</h2>'
                 +    '<p>'+moviedata.worldwide_gross_income +'</p></div>'
-                +    '<div class="description"><h1> Résumé&nbsp;:</h1>'
+                +    '<div class="description"><h2> Résumé&nbsp;:</h2>'
                 +    '<p>'+moviedata.description +'</p></div>'
                 +   '</div>'
                 +  '</div>';
@@ -201,13 +201,13 @@ async function fillCategorie(movies_list, categorie="best_rate", genre=""){
             + '<use xlink:href="./src/icon/Top_7.svg#icon"/>'
             + '</svg>'
             + '</header>'
-            + '<article>'                
+            + '<div>'                
             + '<!-- Main picture of the movie -->'
             + '<img src="'+ movie.image_url +'" alt="">'
-            + '</article>'
+            + '</div>'
             + '<!-- title of the movie -->'
             + '<footer class="subfooter">'
-            + '<h1 class ="">'+movie.title+ '</h1>'
+            + '<h2 class ="">'+movie.title+ '</h2>'
             + '</footer>'
             + '</article>'
             + '</a>'

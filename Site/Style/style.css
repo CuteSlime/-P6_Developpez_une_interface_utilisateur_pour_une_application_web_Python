@@ -137,8 +137,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.play > p {
   font-size: 16px;
   text-decoration: none;
   text-align: center;
@@ -272,6 +270,13 @@ section::-webkit-scrollbar {
   top: 10px;
   left: 30px;
 }
+.title > h1 {
+  color: rgb(212, 212, 212);
+  font-weight: bold;
+  font-size: large;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 .subheader {
   position: relative;
@@ -295,7 +300,7 @@ section::-webkit-scrollbar {
   margin: 0 10px;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.movie article {
+.movie div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
