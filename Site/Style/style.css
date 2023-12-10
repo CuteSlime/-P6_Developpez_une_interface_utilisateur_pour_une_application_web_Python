@@ -247,7 +247,7 @@ section::-webkit-scrollbar {
           justify-content: space-evenly;
   padding: 20px;
   gap: 20px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
 }
