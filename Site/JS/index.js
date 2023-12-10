@@ -47,8 +47,13 @@ async function getBestMovies(genre = "") {
     if (nextMovies){
         movies = [...movies, ...nextMovies];
     }
-    let bestMovies = movies.slice(0, 7);
-    return bestMovies
+    if (genre == ""){
+        let bestMovies = movies.slice(0, 7);
+        return bestMovies
+    }
+    else{
+        return movies
+    }
   };
 
   function selectGenre(list){
