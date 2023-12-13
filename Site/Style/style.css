@@ -195,7 +195,8 @@ section::-webkit-scrollbar {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background: white;
+  background: rgb(98, 117, 127);
+  fill: rgb(212, 212, 212);
   border: none;
   padding: 8px;
   border-radius: 50%;
@@ -206,17 +207,22 @@ section::-webkit-scrollbar {
 
 .prev {
   top: 50%;
-  left: 0;
+  left: -40px;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .next {
   top: 50%;
-  right: 0;
+  right: -40px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #main_movie {

@@ -78,7 +78,8 @@ section::-webkit-scrollbar{
   display: flex;
   justify-content: center;
   align-content: center;
-  background: white;
+  background: $secondaryColor;
+  fill: $textColor;
   border: none;
   padding: 8px;
   border-radius: 50%;
@@ -89,15 +90,16 @@ section::-webkit-scrollbar{
 
 .prev {
   top: 50%;
-  left: 0;
+  left: -40px;
   transform: translate(50%, -50%);
-  display: none;
+  display: flex;
 }
 
 .next {
   top: 50%;
-  right: 0;
+  right: -40px;
   transform: translate(-50%, -50%);
+  display: flex;
 }
 
 

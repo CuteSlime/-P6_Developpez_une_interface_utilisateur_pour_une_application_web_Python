@@ -14,7 +14,7 @@ async function start(){
     makeCarousel()
     makeCarousel("categorie1")
     makeCarousel("categorie2")
-    await makeCarousel("categorie3")
+    makeCarousel("categorie3")
 }
 async function getGenres() {
     let response = await fetch(API_URL + "genres");
@@ -220,29 +220,27 @@ function makeCarousel(categorie="best_rate"){
     let gap = 16;
 
 let carousel = document.getElementById(categorie),
-  content = document.getElementById("content_" + categorie),
-  next = document.getElementById(categorie + "_next"),
-  prev = document.getElementById(categorie + "_prev");
+    content = document.getElementById("content_" + categorie),
+    next = document.getElementById(categorie + "_next"),
+    prev = document.getElementById(categorie + "_prev");
 
   
 next.addEventListener("click", e => {
-  carousel.scrollBy(width + gap, 0);
-  if (carousel.scrollWidth !== 0) {
-    prev.style.display = "flex";
-  }
-  if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-    next.style.display = "none";
-  }
+    carousel.scrollBy(width + gap, 0);
+    if (carousel.scrollWidth - carousel.scrollLeft <= width + 10) {
+        carousel.scrollTo(0, 0);
+    }
+
 });
 prev.addEventListener("click", e => {
-  carousel.scrollBy(-(width + gap), 0);
-  if (carousel.scrollLeft - width - gap <= 0) {
-    prev.style.display = "none";
-  }
-  if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-    next.style.display = "flex";
-  }
+    carousel.scrollBy(-(width + gap), 0);
+    if (carousel.scrollLeft <= 10) {
+        carousel.scrollTo(carousel.scrollWidth, 0);
+    }
+
 });
+
+
 
 let width = carousel.offsetWidth;
 window.addEventListener("resize", e => (width = carousel.offsetWidth));
